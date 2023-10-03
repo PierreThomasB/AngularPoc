@@ -11,7 +11,7 @@ export class Apod {
 
 
 
-    descSimp() : string {return this.explication.padStart(10)};
+    descSimp() : string {return this.explication.slice(0,100)+"..."};
         
     
 

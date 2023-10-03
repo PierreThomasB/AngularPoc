@@ -19,21 +19,13 @@ export class HomeComponentComponent implements OnInit {
     
   }
   ngOnInit(): void {
-    this.dataService.getAllApod().subscribe(response => {
-      console.log(response);
+    this.dataService.getBy10().subscribe(response => {
       response.forEach((element: { [x: string]: string; }) => {
        let apod = new Apod(element["title"], element["explanation"],element["hdUrl"]);
-
-       let apodComp  = new ApodCardComponent(apod);
-
-       const divCont = document.getElementById("apodContainer");
-      
-
-
-       console.log(apod);
        this.apods.push(apod);
        
       });
+      console.log(this.apods);
     });
 
     this.dataReady = true;

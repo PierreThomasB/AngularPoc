@@ -1,7 +1,9 @@
 <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src={{ imageUrl }} alt="Card image cap">
-    <div class="card-body">
-      <p class="card-text">{{titre}}</p>
-    </div>
+  <img class="card-img-top" src={{apod.url}} alt="Card image cap">
+
+  <div class="card-body">
+
+    <h5 class="card-title">{{apod.titre}}</h5>
+    <p class="card-text">{{apod.descSimp()}}</p>
   </div>
-  <h1>Helo </h1>
+  

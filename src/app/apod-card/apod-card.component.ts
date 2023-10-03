@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , Input } from '@angular/core';
 import { Apod } from 'src/domains/apod';
 
 @Component({
@@ -7,14 +7,6 @@ import { Apod } from 'src/domains/apod';
   styleUrls: ['./apod-card.component.css']
 })
 export class ApodCardComponent {
-  imageUrl: string;
-  description:string;
-  titre: string;
-
-  constructor(apod: Apod){
-    this.imageUrl = apod.url;
-    this.description = apod.descSimp();
-    this.titre = apod.titre;
-  }
-  
+  @Input()
+  apod!: Apod;
 }

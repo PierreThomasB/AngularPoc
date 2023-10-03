@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,13 +8,24 @@ import { Observable } from 'rxjs';
 export class DataService {
   private apiUrl = "https://spacelab.henni.be/"; 
 
+  private apiKey: string = "pierrePassWord";
+
   constructor(private http: HttpClient) { }
 
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.apiKey}`
+    })
+  };
+
   // Requête GET
-  getAllApod(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/apod`);
+  getBy10(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/apod?count=10` );
   }
 
+
+ 
 
   /*
   // Requête POST
