@@ -1,17 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Apod } from 'src/domains/apod';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  
 })
-export class AppComponent implements OnInit {
+export class AppComponent  {
+  apods: Apod[] | undefined;
+
+constructor(){}
+
+
+
   ngOnInit(): void {
-    console.log("Hello");
+   
   }
  
-
-  
 
   
 }

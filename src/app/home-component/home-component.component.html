@@ -3,3 +3,11 @@
 <p>Voici les dernières actualité</p>
 
 
+
+<div *ngIf="dataReady">
+<div id="apodContainer" *ngFor="let item of apods">
+    <app-apod-card></app-apod-card>
+</div>
+</div>
+
+
