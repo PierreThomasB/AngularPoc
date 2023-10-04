@@ -7,6 +7,11 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link " href="/login">Login</a>
     </div>
+    <div class="navbar-nav">
+      <div *ngIf="user !== undefined">
+        <p class="nav-item"> {{user.firstName}}</p>
+    </div>
+    </div>
   </div>
 </nav>
 

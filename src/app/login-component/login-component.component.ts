@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../AuthService';
+import { AuthService } from '../authService';
 import { FormBuilder, FormGroup  , Validators} from '@angular/forms';
 import { User } from 'src/domains/user';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login-component',
@@ -10,10 +12,9 @@ import { User } from 'src/domains/user';
 })
 export class LoginComponentComponent {
 
-  user: User = new User('', '');
   userForm: FormGroup;
 
-  constructor(private authService: AuthService , private formBuilder: FormBuilder){
+  constructor(private authService: AuthService , private formBuilder: FormBuilder , private router : Router){
 
     this.userForm = this.formBuilder.group({
       email: ['' , [Validators.required , Validators.email]],
@@ -22,8 +23,24 @@ export class LoginComponentComponent {
   }
 
   login() {
-    let param = {email : this.user.email , password : this.user.password}
-    this.authService.login(JSON.stringify(param)).subscribe(response => {
+    const param = {email : this.userForm.value.email, password : this.userForm.value.password}
+  
+    this.authService.login(param).subscribe(response => {
+
+      if(response.user !== undefined){
+        localStorage.setItem('access_token', response.token);
+        let userObj: object = response.user;
+        const user = Object.assign(userObj,User);
+        localStorage.setItem("user", JSON.stringify(user));
+
+
+        this.router.navigate(["home"]);
+
+
+
+        
+       
+      }
 
       console.log(response);
       // Gérer la réponse du serveur, rediriger vers la page d'accueil, etc.

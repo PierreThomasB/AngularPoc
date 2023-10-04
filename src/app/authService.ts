@@ -11,17 +11,13 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  singup(parameters: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/user/signin`, parameters);
-  }
-
 
 
 
   //LOGIN 
 
-  login(parametre: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/user/signin`, parametre);
+  login(parametre: object): Observable<any> {
+    return this.http.post(`${this.apiUrl}user/signin`, parametre);
   }
 
 
