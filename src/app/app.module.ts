@@ -10,6 +10,7 @@ import { ApodCardComponent } from './apod-card/apod-card.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponentComponent,
     ApodCardComponent,
     LoginComponentComponent,
+    RegisterComponent,
     
    
   ],

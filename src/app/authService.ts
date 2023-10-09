@@ -21,5 +21,10 @@ export class AuthService {
   }
 
 
+  register(parametre: object) : Observable<any>{
+    return this.http.post(`${this.apiUrl}user/signup`,parametre);
+  }
+
+
   // Autres méthodes pour l'inscription, vérification de l'état de connexion, etc.
 }
