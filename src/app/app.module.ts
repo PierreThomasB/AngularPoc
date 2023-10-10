@@ -12,7 +12,6 @@ import { LoginComponentComponent } from './login-component/login-component.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { EmailInputComponent } from './email-input/email-input.component';
-import { InputComponent } from './input/input.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
@@ -24,10 +23,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     LoginComponentComponent,
     RegisterComponent,
     EmailInputComponent,
-    InputComponent,
     NavBarComponent,
-    
-   
+
+
   ],
   imports: [
     BrowserModule,
