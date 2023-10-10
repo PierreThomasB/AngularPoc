@@ -1,4 +1,4 @@
-import { Component , Input } from '@angular/core';
+import { Component , EventEmitter, Input, Output } from '@angular/core';
 import { Apod } from 'src/domains/apod';
 
 @Component({
@@ -7,6 +7,13 @@ import { Apod } from 'src/domains/apod';
   styleUrls: ['./apod-card.component.css']
 })
 export class ApodCardComponent {
-  @Input()
-  apod!: Apod;
+  @Input() apod!: Apod;
+  @Output() event: EventEmitter<Apod> = new EventEmitter<Apod>();
+
+
+  constructor(){
+  }
+  onApodClick(){
+    this.event.emit(this.apod);
+  }
 }
