@@ -1,26 +1,24 @@
 <form [formGroup]="registerForm" (ngSubmit)="register()">
 
-
-
-
     <label for="firstname">First Name</label>
     <input type="text" id="firstname" formControlName="firstname" required>
-
 
     <label for="lastname">First Name</label>
     <input type="text" id="lastname" formControlName="lastname" required>
 
-
     <label for="country">country</label>
     <input type="text" id="country" formControlName="country" required>
 
+    
+    <app-email-input (emailChanged)="onEmailChange($event)"></app-email-input>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" formControlName="email" required>
 
 
     <label for="password">Password</label>
     <input type="password" id="password" formControlName="password" required>
+
+    <label for="confirmPassword">Confirm password</label>
+    <input type="password" id="confirmPassword" formControlName="confirmPassword" required>
   
   
     <button type="submit" [disabled]="registerForm.invalid">Se connecter</button>

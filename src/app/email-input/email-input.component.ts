@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Validators } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-email-input',
@@ -9,27 +9,24 @@ import { Validators } from '@angular/forms';
 export class EmailInputComponent {
 
 
-  @Output()isCorrect=  EventEmitter<string | null> = new EventEmitter<string | null>();
+  @Output() emailChanged: EventEmitter<string> = new EventEmitter<string>();
 
-  emailInput:string = "";
-  isValidEmail: boolean = true;
+
+
+
+  emailControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
 
 
   constructor(){}
 
 
-  onInputChange($event: Event) : void {
-
-    if(this.emailInput.match("^\S+@\S+$")){
-     
-      this.isCorrect.emit(this.emailInput);
-    }else{
-      this.isCorrect.emit("");
+  onInputChanged() : void {
+    if(this.emailControl.value !== null && this.emailControl.valid){
+      this.emailChanged.emit(this.emailControl.value);
     }
-    }
-
-  
-
-
+  }
 
 }

@@ -13,6 +13,8 @@ export class RegisterComponent {
   registerForm: FormGroup;
 
 
+
+
   constructor( private formBuilder: FormBuilder , private authService : AuthService){
 
 
@@ -20,9 +22,10 @@ export class RegisterComponent {
       firstname: ['' , [Validators.required]],
       lastname: ['' ,  Validators.required],
       country:['',Validators.maxLength(2)],
-      email:['',[Validators.email , Validators.required]],
+      email:['',[Validators.email,Validators.required]],
       password:['',[Validators.required , Validators.minLength(4)]],
-      confirmPassword: ['', Validators.required]
+      confirmPassword: ['', Validators.required],
+     
     }, {
       validator: this.passwordValidator
     });
@@ -39,6 +42,11 @@ export class RegisterComponent {
     return false;
   }
 
+  onEmailChange(email: string) {
+    console.log(email);
+    this.registerForm.get("email")?.setValue(email);
+  }
+
 
   register():void{
     const param = {firstname : this.registerForm.value.firstname,lastname : this.registerForm.value.firstname,country : this.registerForm.value.firstname,email : this.registerForm.value.email,password:this.registerForm.value.password};
@@ -52,9 +60,4 @@ export class RegisterComponent {
 
 
   }
-
-
-
-
-
 }
