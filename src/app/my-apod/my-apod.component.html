@@ -1,1 +1,7 @@
-<p>my-apod works!</p>
+<div *ngIf="dataReady">
+    <div *ngFor="let item of apods; let i = index">
+        <app-apod-card [apod]="item"></app-apod-card>
+    </div>
+
+
+</div>

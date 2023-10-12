@@ -11,9 +11,13 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link " href="./register">Register</a>
     </div>
+
+    <div class="navbar-nav">
+      <a class="nav-item nav-link " href="./myapod">My apods</a>
+    </div>
     <div class="navbar-nav">
       <div *ngIf="user !== undefined">
-        <p class="nav-item"> {{user.firstName}}</p>
+        <p class="nav-item"> {{user.firstname}}</p>
       </div>
     </div>
   </div>

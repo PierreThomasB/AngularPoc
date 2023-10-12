@@ -17,15 +17,5 @@ constructor(){}
 
 
   ngOnInit(): void {
-    const str  = localStorage.getItem("user");
-    if(str !== null){
-      
-      let usrObj = JSON.parse(str);
-      this.user = Object.assign(usrObj , User);
-      console.log(this.user)
-    }else {
-      console.info("La clé 'utilisateur' n'existe pas dans le LocalStorage.");
-    }
-   
   }
 }

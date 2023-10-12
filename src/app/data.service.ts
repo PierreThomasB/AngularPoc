@@ -25,6 +25,11 @@ export class DataService {
   }
 
 
+  getByDate(date:string) : Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/apod/`+date);
+  }
+
+
  
 
   /*

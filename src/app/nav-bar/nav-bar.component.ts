@@ -15,14 +15,12 @@ export class NavBarComponent {
   ngOnInit(): void {
     const str = localStorage.getItem("user");
     if (str !== null) {
-
-      let usrObj = JSON.parse(str);
-      this.user = Object.assign(usrObj, User);
+     
+     //userObj["id"],email:userObj["email"]
+      this.user = JSON.parse(str);
       console.log(this.user)
     } else {
       console.error("La clé 'utilisateur' n'existe pas dans le LocalStorage.");
     }
-
   }
-
 }
