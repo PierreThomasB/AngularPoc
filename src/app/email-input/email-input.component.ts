@@ -19,9 +19,7 @@ export class EmailInputComponent {
     Validators.email,
   ]);
 
-
   constructor(){}
-
 
   onInputChanged() : void {
     if(this.emailControl.value !== null && this.emailControl.valid){

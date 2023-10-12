@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { RegisterComponent } from './register/register.component';
+import { MyApodComponent } from './my-apod/my-apod.component';
 
 const routes: Routes = [
   //{path:"first" , component:MonComponentComponent},
@@ -12,6 +13,8 @@ const routes: Routes = [
 
   {path:"login",component:LoginComponentComponent},
   {path:"register",component:RegisterComponent},
+  
+  {path:"myapod",component:MyApodComponent},
   
   {path:"" ,redirectTo:"home" , pathMatch:"full"}
 ];

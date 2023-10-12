@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { EmailInputComponent } from './email-input/email-input.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { MyApodComponent } from './my-apod/my-apod.component';
 
 
 @NgModule({
@@ -26,6 +27,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     NavBarComponent,
 
 
+    MyApodComponent,
+    
+   
   ],
   imports: [
     BrowserModule,
