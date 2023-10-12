@@ -24,7 +24,7 @@ constructor(){}
       this.user = Object.assign(usrObj , User);
       console.log(this.user)
     }else {
-      console.error("La clé 'utilisateur' n'existe pas dans le LocalStorage.");
+      console.info("La clé 'utilisateur' n'existe pas dans le LocalStorage.");
     }
    
   }

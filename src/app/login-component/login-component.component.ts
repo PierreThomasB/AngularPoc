@@ -32,13 +32,7 @@ export class LoginComponentComponent {
         let userObj: object = response.user;
         const user = Object.assign(userObj,User);
         localStorage.setItem("user", JSON.stringify(user));
-
-
         this.router.navigate(["home"]);
-
-
-
-        
        
       }
 

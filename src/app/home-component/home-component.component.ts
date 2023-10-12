@@ -27,12 +27,11 @@ export class HomeComponentComponent implements OnInit {
       });
       console.log(this.apods);
     });
-
     this.dataReady = true;
   }
 
-  onApodClick(apod:Apod){
-    console.log(apod)
+  onApodClick(){
+    console.log("clicked")
   }
 
 }

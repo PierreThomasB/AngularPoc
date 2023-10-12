@@ -6,7 +6,7 @@
 
 <div *ngIf="dataReady">
     <div *ngFor="let item of apods; let i = index">
-        <app-apod-card (event)="onApodClick(apods)" [apod]="item"></app-apod-card>
+        <app-apod-card (event)="onApodClick()" [apod]="item"></app-apod-card>
     </div>
 </div>
 
