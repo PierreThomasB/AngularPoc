@@ -16,14 +16,10 @@ export class MyApodComponent implements OnInit {
   apods :Apod[] = [];
   dataReady : boolean = false;
 
-  
+
 
   constructor(private dataService: DataService){}
-
-
-
   ngOnInit(): void {
-
     const userStr = localStorage.getItem("user");
     if(userStr !== null){
       this.user = JSON.parse(userStr);
@@ -34,16 +30,7 @@ export class MyApodComponent implements OnInit {
           this.apods.push(apod);
         })
       })
-
       this.dataReady = true;
-      
-
-   
-
-
     }
-    
-  
   }
-
 }

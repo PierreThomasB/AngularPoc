@@ -15,6 +15,8 @@ import { EmailInputComponent } from './email-input/email-input.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MyApodComponent } from './my-apod/my-apod.component';
 import { ApodInfoComponent } from './apod-info/apod-info.component';
+import { StoreModule } from '@ngrx/store';
+import { CounterComponent } from './counter/counter.component';
 
 
 @NgModule({
@@ -30,6 +32,7 @@ import { ApodInfoComponent } from './apod-info/apod-info.component';
 
     MyApodComponent,
       ApodInfoComponent,
+      CounterComponent,
     
    
   ],
@@ -39,6 +42,7 @@ import { ApodInfoComponent } from './apod-info/apod-info.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent]

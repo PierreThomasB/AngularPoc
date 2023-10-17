@@ -1,5 +1,6 @@
 import { Component , EventEmitter, Input, Output } from '@angular/core';
 import { Apod } from 'src/domains/apod';
+import {createAction, props} from "@ngrx/store";
 
 @Component({
   selector: 'app-apod-card',
@@ -16,4 +17,9 @@ export class ApodCardComponent {
   onApodClick(){
     this.event.emit(this.apod);
   }
+
 }
+export const like = createAction(
+  '[Home Page] Like',
+  props<{username: string, password: string}>
+)
