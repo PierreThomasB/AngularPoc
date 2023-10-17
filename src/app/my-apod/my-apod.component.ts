@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { User } from 'src/domains/user';
 import { Apod } from 'src/domains/apod';
+import {Store} from "@ngrx/store";
+import {decrement, increment} from "../shared/store/counter.actions";
 
 @Component({
   selector: 'app-my-apod',
@@ -18,7 +20,13 @@ export class MyApodComponent implements OnInit {
 
 
 
-  constructor(private dataService: DataService){}
+  constructor(private dataService: DataService, private store:Store<{counter:{counter:number}}>){}
+  OnIncrement() {
+    this.store.dispatch(increment())
+  }
+  OnDecrement() {
+    this.store.dispatch(decrement())
+  }
   ngOnInit(): void {
     const userStr = localStorage.getItem("user");
     if(userStr !== null){

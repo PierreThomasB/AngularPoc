@@ -17,7 +17,7 @@ import { MyApodComponent } from './my-apod/my-apod.component';
 import { ApodInfoComponent } from './apod-info/apod-info.component';
 import { StoreModule } from '@ngrx/store';
 import { CounterComponent } from './counter/counter.component';
-
+import {counterReducer} from "./shared/store/counter.reducer";
 
 @NgModule({
   declarations: [
@@ -33,8 +33,8 @@ import { CounterComponent } from './counter/counter.component';
     MyApodComponent,
       ApodInfoComponent,
       CounterComponent,
-    
-   
+
+
   ],
   imports: [
     BrowserModule,
@@ -42,7 +42,7 @@ import { CounterComponent } from './counter/counter.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({counter:counterReducer}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent]
