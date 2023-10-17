@@ -5,14 +5,15 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { RegisterComponent } from './register/register.component';
 import { MyApodComponent } from './my-apod/my-apod.component';
+import { ApodInfoComponent } from './apod-info/apod-info.component';
 
 const routes: Routes = [
-  //{path:"first" , component:MonComponentComponent},
-  //{path:"second/:id" , component:SecondComponentComponent},
-  {path:"home", component: HomeComponentComponent},
-
+ 
   {path:"login",component:LoginComponentComponent},
   {path:"register",component:RegisterComponent},
+  {path:"home",component:HomeComponentComponent},
+
+  {path:"apod/:apodId",component:ApodInfoComponent},
   
   {path:"myapod",component:MyApodComponent},
   
