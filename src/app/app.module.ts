@@ -15,6 +15,7 @@ import { EmailInputComponent } from './email-input/email-input.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MyApodComponent } from './my-apod/my-apod.component';
 import { ApodInfoComponent } from './apod-info/apod-info.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ApodInfoComponent } from './apod-info/apod-info.component';
 
     MyApodComponent,
       ApodInfoComponent,
+      NotFoundComponent,
     
    
   ],

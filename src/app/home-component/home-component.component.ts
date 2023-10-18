@@ -14,10 +14,7 @@ export class HomeComponentComponent implements OnInit {
   apods :Apod[] = [];
   dataReady : boolean = false;
 
-  constructor(private dataService: DataService){
-
-    
-  }
+  constructor(private dataService: DataService){}
   ngOnInit(): void {
     this.dataService.getBy10().subscribe(response => {
       response.forEach((element: { [x: string]: string; }) => {
@@ -25,7 +22,6 @@ export class HomeComponentComponent implements OnInit {
        this.apods.push(apod);
        
       });
-      console.log(this.apods);
     });
     this.dataReady = true;
   }
