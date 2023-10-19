@@ -18,20 +18,9 @@ export class ApodCardComponent {
   }
   onApodClick(){
     this.event.emit(this.apod);
-    if (this.isLiked) {
-      this.isLiked = false
-      this.OnDecrement()
-    } else {
-      this.isLiked = true
-      this.OnIncrement()
-    }
+    this.isLiked ? this.OnDecrement() : this.OnIncrement()
+    this.isLiked = !this.isLiked
   }
-
-  OnIncrement() {
-    this.store.dispatch(increment())
-  }
-  OnDecrement() {
-    this.store.dispatch(decrement())
-  }
-
+  OnIncrement() { this.store.dispatch(increment()) }
+  OnDecrement() { this.store.dispatch(decrement()) }
 }
