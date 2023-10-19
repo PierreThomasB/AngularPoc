@@ -20,13 +20,8 @@ export class MyApodComponent implements OnInit {
 
 
 
-  constructor(private dataService: DataService, private store:Store<{counter:{counter:number}}>){}
-  OnIncrement() {
-    this.store.dispatch(increment())
-  }
-  OnDecrement() {
-    this.store.dispatch(decrement())
-  }
+  constructor(private dataService: DataService){}
+
   ngOnInit(): void {
     const userStr = localStorage.getItem("user");
     if(userStr !== null){

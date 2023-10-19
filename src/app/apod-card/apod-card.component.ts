@@ -1,6 +1,7 @@
 import { Component , EventEmitter, Input, Output } from '@angular/core';
 import { Apod } from 'src/domains/apod';
-import {createAction, props} from "@ngrx/store";
+import {createAction, props, Store} from "@ngrx/store";
+import {decrement, increment} from "../shared/store/counter.actions";
 
 @Component({
   selector: 'app-apod-card',
@@ -12,10 +13,18 @@ export class ApodCardComponent {
   @Output() event: EventEmitter<Apod> = new EventEmitter<Apod>();
 
 
-  constructor(){
+  constructor(private store:Store<{counter:{counter:number}}>){
   }
   onApodClick(){
     this.event.emit(this.apod);
+    this.OnIncrement()
+  }
+
+  OnIncrement() {
+    this.store.dispatch(increment())
+  }
+  OnDecrement() {
+    this.store.dispatch(decrement())
   }
 
 }

@@ -1,7 +1,8 @@
+
 <div *ngIf="dataReady">
     <div *ngFor="let item of apods; let i = index">
-        <app-apod-card (click)="OnIncrement()" [apod]="item"></app-apod-card>
+        <app-apod-card [apod]="item"></app-apod-card>
     </div>
 
-    <app-counter></app-counter>
+
 </div>
