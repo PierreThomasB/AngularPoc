@@ -11,13 +11,20 @@ import {decrement, increment} from "../shared/store/counter.actions";
 export class ApodCardComponent {
   @Input() apod!: Apod;
   @Output() event: EventEmitter<Apod> = new EventEmitter<Apod>();
-
+  isLiked:boolean
 
   constructor(private store:Store<{counter:{counter:number}}>){
+    this.isLiked = false
   }
   onApodClick(){
     this.event.emit(this.apod);
-    this.OnIncrement()
+    if (this.isLiked) {
+      this.isLiked = false
+      this.OnDecrement()
+    } else {
+      this.isLiked = true
+      this.OnIncrement()
+    }
   }
 
   OnIncrement() {
@@ -28,7 +35,3 @@ export class ApodCardComponent {
   }
 
 }
-export const like = createAction(
-  '[Home Page] Like',
-  props<{username: string, password: string}>
-)

@@ -34,13 +34,6 @@ export class HomeComponentComponent implements OnInit {
 
   onApodClick(){
     console.log("clicked")
-    this.OnIncrement()
   }
-  OnIncrement() {
-    this.store.dispatch(increment())
 
-  }
-  OnDecrement() {
-    this.store.dispatch(decrement())
-  }
 }
