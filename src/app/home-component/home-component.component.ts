@@ -27,7 +27,6 @@ export class HomeComponentComponent implements OnInit {
        this.apods.push(apod);
 
       });
-      console.log(this.apods);
     });
     this.dataReady = true;
   }

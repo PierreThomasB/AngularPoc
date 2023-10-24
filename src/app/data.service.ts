@@ -29,6 +29,10 @@ export class DataService {
     return this.http.get<any>(`${this.apiUrl}/apod/`+date);
   }
 
+  getById(id:string) : Observable<any>{
+    return this.http.get<any>(`${this.apiUrl}/apod/`+id);
+  }
+
 
  
 

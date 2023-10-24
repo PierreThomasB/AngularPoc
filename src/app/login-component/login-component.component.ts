@@ -14,6 +14,8 @@ export class LoginComponentComponent {
 
   userForm: FormGroup;
 
+  desactivate : boolean = true;
+
   constructor(private authService: AuthService , private formBuilder: FormBuilder , private router : Router){
 
     this.userForm = this.formBuilder.group({

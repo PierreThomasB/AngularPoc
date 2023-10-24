@@ -18,6 +18,8 @@ import { ApodInfoComponent } from './apod-info/apod-info.component';
 import { StoreModule } from '@ngrx/store';
 import { CounterComponent } from './counter/counter.component';
 import {reducer} from "./shared/store/counter.reducer";
+import { NotFoundComponent } from './not-found/not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +37,9 @@ import {reducer} from "./shared/store/counter.reducer";
       CounterComponent,
 
 
+      NotFoundComponent,
+    
+   
   ],
   imports: [
     BrowserModule,
